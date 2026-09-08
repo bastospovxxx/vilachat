@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Vila Chat</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+<header class="topbar">
+  <div class="brand"><div class="logo" id="brandAvatar">💬</div><div><h1>Vila Chat</h1><span id="onlineCount">Conectando...</span></div></div>
+  <div class="user-area"><span id="currentAvatar">🙂</span><span id="currentName">Anônimo</span><button id="changeNameBtn">Mudar nome</button><button id="settingsBtn" class="top-settings" type="button" title="Configurações">⚙️</button></div>
+</header>
+<div class="local-tools"><input id="searchBox" class="search-box" type="search" maxlength="100" placeholder="🔎 Pesquisar mensagens já carregadas..."><button id="clearViewBtn" class="small-btn" type="button" title="Limpar minha tela">🧹</button></div>
+<main id="messages" class="messages"><div class="welcome"><h2>Bem-vindo ao Vila Chat! 👋</h2><p>Escolha seu nome e comece a conversar.</p></div></main>
+<div id="emojiPanel" class="emoji-panel" hidden></div>
+<form id="messageForm" class="composer">
+<button type="button" id="emojiBtn" class="icon-btn">😊</button>
+<input id="messageInput" maxlength="1000" autocomplete="off" placeholder="Escreva uma mensagem..." required>
+<span id="counter">0/1000</span>
+<button id="sendBtn" type="submit" class="send-btn">Enviar</button>
+</form>
+</div>
+<dialog id="nameDialog"><form method="dialog" id="nameForm"><h2>Seu nome</h2><p>Escolha como você aparecerá no chat.</p><input id="nameInput" maxlength="20" placeholder="Seu nome" required><div class="dialog-actions"><button value="cancel">Cancelar</button><button value="save" class="save">Salvar</button></div></form></dialog>
+<dialog id="settingsDialog" class="settings-dialog">
+<form method="dialog" class="settings-card" id="settingsForm">
+<h2>Configurações ⚙️</h2>
+<div class="setting-block"><label>Nome</label><div class="setting-inline"><input id="settingsName" maxlength="20" placeholder="Seu nome"><button id="settingsSaveName" type="button" class="save">Salvar</button></div></div>
+<div class="setting-block"><label>Avatar / ícone</label><div id="avatarGrid" class="avatar-grid"></div></div>
+<div class="setting-block"><label>Emojis</label><select id="emojiCategory"><option value="todos">Todos</option><option value="rostos">Rostos</option><option value="gestos">Gestos</option><option value="coracoes">Corações</option><option value="comida">Comida</option><option value="diversao">Diversão</option><option value="objetos">Objetos</option></select></div>
+<div class="setting-block"><label>Tema</label><select id="themeSelect"><option value="green">Verde</option><option value="blue">Azul</option><option value="purple">Roxo</option></select></div>
+<label class="setting-row"><span>🌙 Modo escuro</span><input id="darkModeToggle" type="checkbox"></label>
+<label class="setting-row"><span>🔔 Som ao receber mensagem</span><input id="soundToggle" type="checkbox"></label>
+<div class="settings-actions"><button value="cancel" type="submit">Fechar</button></div>
+</form>
+</dialog>
+<div id="toast" class="toast" aria-live="polite"></div>
+<script type="module" src="script.js"></script>
+</body>
+</html>
